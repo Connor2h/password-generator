@@ -1,6 +1,6 @@
 // Assignment code here
 var passwordLength;
-var passwords = [];
+var passwordArray = [];
 var lowerCaseAnswer = false;
 var upperCaseAnswer = false;
 var numericAnswer = false;
@@ -12,7 +12,7 @@ var specialCharsArray = [" ","!","\"","#","$","%","&","'","(",")","*","+",",","-
 // wasn't able to put ", \, 
 var combinedArray = [];
 
-function passwordLength(){
+function passwordLengthFunc(){
   passwordLength = prompt("How long of a password do you want?(Please provide an answer between 8 and 128)");
     while (passwordLength < 8 || passwordLength > 128){
       passwordLength = prompt("You must choose a password between 8 and 128 characters");
@@ -21,25 +21,25 @@ function passwordLength(){
 
 function questions(){
   alert("Please let us know if you would like lower case letters, uppercase letters, numeric characters, and/or special characters. You must choose one of the options.");
-  lowerCaseAnswer = window.confirm("Would you like lower case letters in your password? EX: yes/no");
+  lowerCaseAnswer = window.confirm("Would you like lower case letters in your password?");
   if(lowerCaseAnswer){
     lowerCaseAnswer = true;
   }else{
     lowerCaseAnswer = false;
   }
-  upperCaseAnswer = window.confirm("Would you like upper case letters in your password? EX: yes/no");
+  upperCaseAnswer = window.confirm("Would you like upper case letters in your password?");
   if(upperCaseAnswer){
     upperCaseAnswer = true;
   }else{
     upperCaseAnswer = false;
   }
-  numericAnswer = window.confirm("Would you like numeric characters in your password? EX: yes/no");
+  numericAnswer = window.confirm("Would you like numeric characters in your password?");
   if(numericAnswer){
     numericAnswer = true;
   }else{
     numericAnswer = false;
   }
-  specialChars = window.confirm("Would you like special characters in your password? EX: yes/no");
+  specialChars = window.confirm("Would you like special characters in your password?");
   if(specialChars){
     specialChars = true;
   }else{
@@ -54,7 +54,7 @@ function validateResponse(){
 }
 
 function generatePassword(){
-  passwordLength();
+  passwordLengthFunc();
   questions();
   validateResponse();
 
@@ -80,14 +80,12 @@ function generatePassword(){
   
   for(var i = 0; i <= passwordLength; i++){
     var randomNumber = combinedArray[Math.floor(Math.random() * combinedArray.length)];
-    passwords += randomNumber;
+    passwordArray += randomNumber;
   }
 
-  return passwords;
+  return passwordArray;
 
 }
-
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");

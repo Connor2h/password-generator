@@ -21,26 +21,26 @@ function passwordLength(){
 
 function questions(){
   alert("Please let us know if you would like lower case letters, uppercase letters, numeric characters, and/or special characters. You must choose one of the options.");
-  lowerCaseAnswer = prompt("Would you like lower case letters in your password? EX: yes/no");
-  if(lowerCaseAnswer == "yes" || lowerCaseAnswer == "Yes"){
+  lowerCaseAnswer = window.confirm("Would you like lower case letters in your password? EX: yes/no");
+  if(lowerCaseAnswer){
     lowerCaseAnswer = true;
   }else{
     lowerCaseAnswer = false;
   }
-  upperCaseAnswer = prompt("Would you like upper case letters in your password? EX: yes/no");
-  if(upperCaseAnswer == "yes" || upperCaseAnswer == "Yes"){
+  upperCaseAnswer = window.confirm("Would you like upper case letters in your password? EX: yes/no");
+  if(upperCaseAnswer){
     upperCaseAnswer = true;
   }else{
     upperCaseAnswer = false;
   }
-  numericAnswer = prompt("Would you like numeric characters in your password? EX: yes/no");
-  if(numericAnswer == "yes" || numericAnswer == "Yes"){
+  numericAnswer = window.confirm("Would you like numeric characters in your password? EX: yes/no");
+  if(numericAnswer){
     numericAnswer = true;
   }else{
     numericAnswer = false;
   }
-  specialChars = prompt("Would you like special characters in your password? EX: yes/no");
-  if(specialChars == "yes" || specialChars == "Yes"){
+  specialChars = window.confirm("Would you like special characters in your password? EX: yes/no");
+  if(specialChars){
     specialChars = true;
   }else{
     specialChars = false;
